@@ -8,11 +8,19 @@ function Home() {
         { id: 4, title: "Pocketful of Sunshine", release_date: "2020" },
     ]
 
-    return <div className="home">
-        <div className="movie.grid">
-            {movies.map(movie => <MovieCard movie={movie} key={movie.id}/>)}
+    const handleSearch = () => {
 
-            </div>
+    }
+
+    return <div className="home">
+        <form onSubmit={handleSearch} className="search-form">
+            <input type="text" placeholder="Search for movies..." className="search-input" />
+        </form>
+
+        <div className="movie.grid">
+            {movies.map(movie => <MovieCard movie={movie} key={movie.id} />)}
+
+        </div>
     </div>
 }
 
